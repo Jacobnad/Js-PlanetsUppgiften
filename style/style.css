@@ -1,0 +1,292 @@
+/* Standardinställningar för alla element */
+* {
+    box-sizing: border-box; /* Säkerställer att padding och border ingår i elementets totala storlek */
+}
+
+/* Grundinställningar för kroppens bakgrund och layout */
+body {
+    background: linear-gradient(90deg, #0c164d 0%, #190b22 100%); /* Bakgrundsgradient för kroppen */
+    width: 100vw; /* Full bredd av visningsfönstret */
+    height: 100vh; /* Full höjd av visningsfönstret */
+    margin: 0; /* Ingen marginal runt kroppen */
+    padding: 0; /* Ingen padding i kroppen */
+    display: flex; /* Flexbox layout */
+    align-items: center; /* Vertikal centrering */
+    justify-content: space-around; /* Jämn fördelning horisontellt */
+    position: relative; /* Relativ position för innerkomponenter */
+}
+
+/* Main container för planeter */
+.mainPlanets {
+    height: 100vh; /* Full höjd */
+    width: 100vw; /* Full bredd */
+    display: flex; /* Flexbox layout för planeter */
+    align-items: center; /* Vertikal centrering */
+    justify-content: space-around; /* Jämn fördelning horisontellt */
+    position: relative; /* Relativ position */
+}
+
+/* Navigeringstext */
+.NavText {
+    position: absolute; /* Absolut positionering */
+    color: white; /* Vit textfärg */
+    top: 0; /* Placera texten längst upp */
+    right: 4%; /* Högerjustering med 4% marginal */
+}
+
+/* Huvudtitel i navigeringen */
+.NavText h1 {
+    font-family: Secular One; /* Typsnitt för huvudtitel */
+    font-size: 60px; /* Större textstorlek */
+    font-weight: 400; /* Normal vikt på texten */
+    line-height: 60px; /* Radavstånd lika med textstorleken */
+    letter-spacing: 0.09em; /* Litet avstånd mellan bokstäverna */
+    text-align: right; /* Högerjustering av texten */
+    text-underline-position: from-font; /* Understrykning från typsnittet */
+    text-decoration-skip-ink: none; /* Ingen automatisk borttagning av understrykning */
+}
+
+/* Undertitel i navigeringen */
+.NavText h4 {
+    font-family: Lora; /* Typsnitt för undertitel */
+    font-size: 24px; /* Mindre textstorlek än huvudtiteln */
+    font-weight: 400; /* Normal vikt på texten */
+    line-height: 24px; /* Radavstånd lika med textstorleken */
+    letter-spacing: 0.6em; /* Stort avstånd mellan bokstäverna */
+    text-align: right; /* Högerjustering */
+    text-underline-position: from-font; /* Understrykning från typsnittet */
+    text-decoration-skip-ink: none; /* Ingen automatisk borttagning av understrykning */
+    color: #ffd029; /* Gul färg för undertiteln */
+}
+
+/* Container för alla planeter */
+.allPlanets {
+    display: flex; /* Flexbox layout för planeterna */
+    align-items: center; /* Vertikal centrering */
+    width: 80vw; /* 80% av visningsfönstrets bredd */
+    justify-content: space-around; /* Jämn fördelning horisontellt */
+}
+
+/* Solen */
+.sun {
+    position: absolute; /* Absolut positionering av solen */
+    height: 110%; /* Höjd större än 100% för att täcka mer utrymme */
+    width: 40%; /* Bredd på 40% av containerbredden */
+    border-radius: 50%; /* Gör solen rund */
+    background-color: #ffd029; /* Gul solfärg */
+    left: -32%; /* Flyttar solen till vänster */
+}
+
+/* Planeter */
+.planet {
+    transition: transform 0.5s ease; /* Långsam övergång vid hover */
+}
+
+/* Planeter vid hover */
+.planet:hover {
+    transform: scale(2); /* Förstorar planeten vid hover */
+}
+
+/* Solen vid hover */
+.sun:hover {
+    transform: scale(1.2); /* Förstorar solen vid hover */
+}
+
+/* Skala vid olika skärmstorlekar */
+@media screen and (max-width: 2100px) {
+    .planet:hover {
+        transform: scale(1.5); /* Förminskar förstoring för stora skärmar */
+    }
+
+    .sun:hover {
+        transform: scale(1.2); /* Oförändrad solstorlek vid hover */
+    }
+}
+
+@media screen and (max-width: 1600px) {
+    .planet:hover {
+        transform: scale(1.2); /* Förminskar förstoring för medelstora skärmar */
+    }
+
+    .sun:hover {
+        transform: scale(1.1); /* Minskar solens hover-storlek */
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .planet:hover {
+        transform: scale(1.1); /* Första förminskningen för små skärmar */
+    }
+
+    .sun:hover {
+        transform: scale(1.1); /* Oförändrad solstorlek för små skärmar */
+    }
+}
+
+/* Specifika planeter */
+.mercury { width: 24px; height: 24px; border-radius: 50%; background-color: #888888; } /* Merkurius */
+.venus { width: 58px; height: 58px; border-radius: 50%; background-color: #e7cdcd; } /* Venus */
+.earth { width: 58px; height: 58px; border-radius: 50%; background-color: #428ed4; } /* Jordens planet */
+.mars { width: 24px; height: 24px; border-radius: 50%; background-color: #ef5f5f; } /* Mars */
+.jupiter { width: 233px; height: 233px; border-radius: 50%; background-color: #e29468; } /* Jupiter */
+.saturn { transform: rotate(-20deg); width: 188px; height: 188px; border-radius: 50%; background-color: #c7aa72; } /* Saturnus med rotation */
+.saturn .saturnRing { position: absolute; top: 50%; left: -25%; width: 280px; height: 5px; background-color: rgba(255, 255, 255, 0.418); border-radius: 50%; } /* Saturnus ring */
+.uranus { width: 96px; height: 96px; border-radius: 50%; background-color: #c9d4f1; } /* Uranus */
+.neptune { width: 96px; height: 96px; border-radius: 50%; background-color: #7a91a7; } /* Neptunus */
+
+/* Fält och transparens */
+.firstField,
+.secondField,
+.thirdField {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+}
+
+.firstField { left: -33%; top: -10%; }
+.secondField { left: -30%; top: -10%; }
+.thirdField { left: -27.5%; top: -10%; }
+
+/* Transparens för fälten */
+.FieldTransparency {
+    position: absolute;
+    height: 120%;
+    width: 40%;
+    border-radius: 100%;
+}
+
+.firstField .FieldTransparency { background-color: #0081bd; }
+.secondField .FieldTransparency { background-color: #428ed41a; }
+.thirdField .FieldTransparency { background-color: #428ed40f; }
+
+/* Återvända-knappen */
+.return {
+    width: 50px;
+    height: 50px;
+    background-color: yellow;
+    border: none;
+    border-radius: 50%; /* Rund knapp */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+    transition: transform 0.3s ease; /* Smidig övergång vid hover */
+}
+
+.return:hover {
+    transform: scale(1.2); /* Förstorar knappen vid hover */
+}
+
+.return::before {
+    content: '←'; /* Lägg till pilen som innehåll */
+    font-size: 30px;
+    color: white; /* Vit färg på pilen */
+}
+
+/* Moons section */
+.moonsSection {
+    width: 100px; /* Bredd på månarna sektionen */
+}
+
+/* Data */
+.data {
+    height: 100vh;
+    width: 100vw;
+    color: white;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    background-image: url("../img/stars.png"); /* Bakgrundsbild för data sektionen */
+}
+
+.info {
+    margin-top: 5%;
+    width: 640px;
+    height: 682px;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+
+/* Informationstext */
+.info h1 {
+    font-family: Secular One;
+    font-size: 60px;
+    font-weight: 400;
+    line-height: 60px;
+    letter-spacing: 0.09em;
+    text-align: left;
+}
+
+.info h2 {
+    font-family: Lora;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0.6em;
+    text-align: left;
+    color: #ffd029; /* Gul färg */
+}
+
+.info p {
+    font-family: Roboto Condensed;
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 30.6px;
+    text-align: left;
+    max-width: 80%;
+    padding-bottom: 50px;
+    border-bottom: 1px #ffffff33 solid; /* Undre gräns för text */
+}
+
+/* Facts section */
+.facts {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Sektioner inom facts */
+.facts .top,
+.facts .mid,
+.facts .bottom {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.facts .omkrets,
+.facts .distans,
+.facts .minTemp,
+.facts .maxTemp,
+.facts .moons {
+    width: 100%;
+}
+
+.facts h2 {
+    font-family: Secular One;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 18px;
+    letter-spacing: 0.09em;
+    text-align: left;
+    color: white;
+}
+
+.facts p {
+    font-family: Roboto Condensed;
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 30.6px;
+    letter-spacing: 0.16em;
+    text-align: left;
+    border: none;
+    width: 100%;
+}
+
+/* Border mellan fakta */
+.border {
+    width: 80%;
+    border-bottom: 1px solid #ffffff33;
+}

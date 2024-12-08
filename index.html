@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script defer type="module" src="./js/fetch.js"></script>
+		<script type="module" src="./js/script.js"></script>
+		<script type="module" src="./js/data.js"></script>
+		<link rel="stylesheet" href="./style/style.css" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
+		<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Secular+One&display=swap" rel="stylesheet" />
+		<title>Planeter</title>
+	</head>
+	<body>
+		<main class="mainPlanets">
+			<!-- Navigationsbar med text för att representera solsystemet -->
+			<nav class="NavText">
+				<h1>SOLSYSTEMET</h1> <!-- Huvudrubrik för solsystemet -->
+				<h4>SOLARIS</h4> <!-- Undertitel för solsystemet -->
+			</nav>
+			<!-- Solens sektion -->
+			<section class="sun planet"></section>
+		
+			<!-- Container för alla planeter -->
+			<div class="allPlanets">
+				<!-- Sektion för Merkurius -->
+				<section class="mercury planet"></section>
+		
+				<!-- Sektion för Venus -->
+				<section class="venus planet"></section>
+		
+				<!-- Sektion för Jorden -->
+				<section class="earth planet"></section>
+		
+				<!-- Sektion för Mars -->
+				<section class="mars planet"></section>
+		
+				<!-- Sektion för Jupiter -->
+				<section class="jupiter planet"></section>
+		
+				<!-- Sektion för Saturnus, inklusive dess ring -->
+				<section class="saturn planet">
+					<section class="saturnRing"></section> <!-- Saturnus ring -->
+				</section>
+		
+				<!-- Sektion för Uranus -->
+				<section class="uranus planet"></section>
+		
+				<!-- Sektion för Neptunus -->
+				<section class="neptune planet"></section>
+			</div>
+		</main>
+		
+		<div class="data" style="display: none">
+			<div class="firstField">
+				<div class="FieldTransparency"></div>
+			</div>
+			<div class="secondField">
+				<div class="FieldTransparency"></div>
+			</div>
+			<div class="thirdField">
+				<div class="FieldTransparency"></div>
+			</div>
+			<div class="info">
+				<h1 class="planetName"></h1>
+				<h2 class="latin"></h2>
+				<p class="infoText"></p>
+				<section class="facts">
+					<div class="top">
+						<div class="omkrets">
+							<h2 class="omkretsHeader">OMKRETS</h2>
+							<p class="omkretsInfo"></p>
+						</div>
+						<div class="distans">
+							<h2 class="distansHeader">KM FRÅN SOLEN</h2>
+							<p class="distansKm"></p>
+						</div>
+					</div>
+					<div class="border"></div>
+					<div class="mid">
+						<div class="maxTemp">
+							<h2 class="maxtempHeader">MAX TEMPERATUR</h2>
+							<p class="maxtempC"></p>
+						</div>
+						<div class="minTemp">
+							<h2 class="mintempHeader">MIN TEMPERATUR</h2>
+							<p class="mintempC"></p>
+						</div>
+					</div>
+					<div class="border"></div>
+					<div class="bottom">
+						<section class="moons">
+							<h2 class="moonsMoons">MÅNAR</h2>
+							<p class="moonsMoon"></p>
+						</section>
+						<button class="return" aria-label="return"></button> <!-- Lägg till en etikett för tillgänglighet -->
+					</div>
+				</section>
+			</div>
+		</div>
+		
+		
+	</body>
+</html>
